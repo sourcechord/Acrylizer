@@ -4,9 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Acrylizer"
+        xmlns:controls="clr-namespace:Acrylizer.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="150" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FFF4F4F5" Height="75" Margin="5" Stroke="Black" Width="75"
+                   MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"
+                   MouseLeftButtonUp="Rectangle_MouseLeftButtonUp"
+                   MouseMove="Rectangle_MouseMove"/>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <controls:HSVSelector x:Name="hsvSelector" Margin="5"/>
+            <Slider x:Name="sldOpacity" Grid.Row="1" Margin="5"
+                    VerticalAlignment="Center"
+                    Minimum="0" Maximum="1"/>
+        </Grid>
     </Grid>
 </Window>
